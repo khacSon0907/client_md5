@@ -1,11 +1,10 @@
 
+import Routers from "@routes/Routers"
 const App = () => {
   return (
     <div>
-   
-    
-    Thuốc lá hút là nghiện
-
+      on ok
+    <Routers/>
     </div>
   )
 }
