@@ -2,8 +2,10 @@
 const App = () => {
   return (
     <div>
-      ok ok ok
-      Edit code đi anh ba ơi
+   
+    
+    Thuốc lá hút là nghiện
+
     </div>
   )
 }
