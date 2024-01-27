@@ -24,19 +24,17 @@ jobs:
         port: 22
         script: |
           cd /var/www/project5/client_md5
-          echo "Git pull dữ liệu mới"
+          echo "GitPull dữ liệu mới"
           git pull
           git status
           echo "kiểm tra và kích hoạt nvm"
           . $HOME/.nvm/nvm.sh
           nvm use
-           echo "tạo và cấu hình .env"
+          echo "tạo và cấu hình .env"
           cp .env.example .env
-          echo "cài đặt lại node module"
+          echo "cài đặt nodemodules"
           npm ci
           echo "build dự án"
           npm run build
-          echo "reset SWAP"
-          sudo swapoff -a; sudo swapon -a
-          echo "Gửi thông báo"
+          echo "thông báo"
           curl -X POST -H "Content-Type: application/json" -H "Authorization: ${{ secrets.DISCORD_TOKEN }}" -d '{"content":"Dự án React đã deploy thành công link: https://nks.io.vn "}' ${{ secrets.DISCORD_URL }}
