@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: $headerHeight;
+    background-color: $backGround;
+    line-height: 56px;
+    nav{
+        margin: 0px 100px;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        
+        .navLeft{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:30px;
+            .navLogo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                .imageCigarette{
+                    width: 35px;
+                    height: 35px;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .titlePage{
+                    text-decoration: none;
+                    color: $colorTitle;
+                    font-family: $fontFamily;
+                    font-weight: 600;
+                    font-size: 22px;
+                    font-family: $fontFamily;
+                }
+            }
+            .navMenu{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                ul{
+                    li{
+                        padding: 0px 15px;
+                        list-style: none;
+                        display: inline-block;
+                        .titleMenu{
+                            text-decoration: none;
+                            color:$colorTitleMenu ;
+                            font-size: $fontSizeMenu;
+                            font-family: $fontFamily;
+                            font-weight: 600; 
+                        }
+                        .titleMenu:hover{
+                            color:$colorTitle;
+                        }
+                        .iconDown{
+                            color: $colorTitleMenu;
+                            padding-left: 7px;
+                        }
+                        .iconDown:hover{
+                            color:$colorTitle;
+                        }
+                    }
+                }
+            }
+            
+        }
+       
+        .navAction{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:25px;
+            .navAction__login{
+                .inputLogin{
+                    text-decoration: none;
+                    color: $colorTitleMenu;
+                    font-size: $fontSizeMenu;
+                    font-family: $fontFamily;
+                    font-weight: 600;
+
+                }
+                .inputLogin:hover{
+                    color:$colorTitle;
+                }
+            }
+            .navAction__cart{
+
+                .iconCart{
+                    color: $colorTitleMenu;
+                    font-weight: 700;
+                }
+                .iconCart:hover{
+                    color:$colorTitle;
+                }
+
+            }
+        }
+        
+    }
+}

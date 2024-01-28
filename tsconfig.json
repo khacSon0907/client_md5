@@ -20,7 +20,8 @@
     "paths": {
       "@/*": ["./src/*", "./dist/*", ""],
       "@pages/*": ["src/pages/*"],
-      "@routes/*":["src/routes/*"]
+      "@routes/*":["src/routes/*"],
+      "@pictures/*":["src/pictures"],
     },
 
 

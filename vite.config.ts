@@ -11,7 +11,8 @@ export default defineConfig({
       alias: {
         "@": path.resolve(__dirname, "./src/"),
         "@routes": `${path.resolve(__dirname, "./src/routes/")}`,
-        "@pages": `${path.resolve(__dirname, "./src/pages/")}`
+        "@pages": `${path.resolve(__dirname, "./src/pages/")}`,
+        "@pictures": `${path.resolve(__dirname, "./src/pictures/")}`,
       },
     },
 
