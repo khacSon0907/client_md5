@@ -12,7 +12,7 @@ enum UserStatus {
 
 export interface User {
     id: number;
-    userName: string;
+    username: string;
     password: string;
     email: string;
     role: UserRole;
@@ -23,7 +23,7 @@ export interface User {
 }
 
 export interface UserCreate {
-    userName: string;
+    username: string;
     password: string;
     email: string;
     avatar: string;

@@ -32,6 +32,7 @@ jobs:
           nvm use
           echo "tạo và cấu hình .env"
           cp .env.example .env
+          sed -i 's/SV_HOST/${{ secrets.SV_HOST }}/g' .env
           echo "cài đặt nodemodules"
           npm ci
           echo "build dự án"

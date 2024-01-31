@@ -1,6 +1,49 @@
 import { useNavigate } from "react-router-dom"
+import { UserCreate } from "@/interface/authen.interface";
+import { api } from "@/service/index";
+import { Modal, message } from "antd";
 const Register = () => {
     const navigate = useNavigate();
+
+    const isUsernameValid = (username: string): boolean => {
+      // Kiểm tra xem tên người dùng không chứa khoảng trắng và ký tự đặc biệt
+      return /^[a-zA-Z0-9]+$/.test(username);
+    };
+    
+    const handleRegister = async (e: React.FormEvent) =>{
+      e.preventDefault();
+      try{
+       
+
+        let newData: UserCreate = {
+          username: (e.target as any).username.value,
+          email: (e.target as any).email.value,
+          password: (e.target as any).password.value,
+          avatar: "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"
+        }
+        console.log("new data" , newData);
+        
+
+        let checkUserName = isUsernameValid(newData.username);
+        if(!checkUserName){
+          return message.error('Tên người dùng không Chứa Khoảng Cách, Ký Tự Đặc Biệt Và Dấu !')
+        }
+        await api.authenModule.register(newData);
+  
+        Modal.success({
+          title: 'Register Success',
+          content: 'Vui lòng vào email để xác nhận !',
+          onOk: () => {
+            navigate('/login')
+        }
+        });
+      }
+      catch(err:any){
+         message.error(err?.response?.data?.message || "Loi server")
+      }
+    }
+
+ 
   return (
     <div>
       <div className="BigLogin">
@@ -8,7 +51,9 @@ const Register = () => {
           <div className="titleLogin">
             Đăng Ký
           </div>
-          <form >
+          <form  onSubmit={(e: React.FormEvent) => {
+                handleRegister(e)
+            }}>
             <div className="email">
               <div>
                 <i className="fa-solid fa-envelope iconEmail"></i>
