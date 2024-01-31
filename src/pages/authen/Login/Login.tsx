@@ -29,6 +29,12 @@ const Login = () => {
             <div className="actionBtn-Login">
                 <button>Xác Nhận</button>
             </div>
+
+            <div className="actionBtn-Google">
+                <button>
+                      Google
+                </button>
+            </div>
           </form>
 
           <div className='textLogin'>

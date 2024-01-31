@@ -13,6 +13,8 @@ export default defineConfig({
         "@routes": `${path.resolve(__dirname, "./src/routes/")}`,
         "@pages": `${path.resolve(__dirname, "./src/pages/")}`,
         "@pictures": `${path.resolve(__dirname, "./src/pictures/")}`,
+        "@interface": `${path.resolve(__dirname, "./src/interface/")}`,
+        "@service": `${path.resolve(__dirname, "./src/service/")}`,
       },
     },
 

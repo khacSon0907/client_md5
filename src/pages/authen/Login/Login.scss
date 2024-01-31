@@ -2,14 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
+    min-height: 450px;
     width: 100%;
     background-color: rgb(77, 77, 77);
     .login{
         border: 1px solid black;
-        height: 380px;
+        min-height: 380px;
         width: 354px;
         background-color: #faf3f3;
+        padding-bottom: 20px;
         .titleLogin{
             color: #505050;
             font-family: $fontFamily;
@@ -71,6 +72,25 @@
             }
             button:hover{
                 background-color: #62a3f8;
+            }
+        }
+        .actionBtn-Google{
+            margin: 10px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                border: none;
+                width: 290px;
+                height: 35px;
+                background-color: rgb(253, 35, 35);
+                color: #FFFFFF;
+                font-family: $fontFamily;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(252, 68, 68);
             }
         }
         .textLogin{

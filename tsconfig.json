@@ -22,6 +22,8 @@
       "@pages/*": ["src/pages/*"],
       "@routes/*":["src/routes/*"],
       "@pictures/*":["src/pictures"],
+      "@service/*":["src/service"],
+      "@interface/*":["src/interface"]
     },
 
 
