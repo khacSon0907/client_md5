@@ -43,7 +43,7 @@ const Login = () => {
             <div className="email">
               <div>
                 <i className="fa-solid fa-envelope iconEmail"></i>
-                <input type="text" placeholder='Email hoặc UserName' name='loginUser' />
+                <input type="text" placeholder='Email or UserName' name='loginUser' />
               </div>
             </div>
 
