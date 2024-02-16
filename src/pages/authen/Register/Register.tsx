@@ -21,15 +21,13 @@ const Register = () => {
           password: (e.target as any).password.value,
           avatar: "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"
         }
-        console.log("new data" , newData);
-        
-
+      
         let checkUserName = isUsernameValid(newData.username);
         if(!checkUserName){
           return message.error('Tên người dùng không Chứa Khoảng Cách, Ký Tự Đặc Biệt Và Dấu !')
         }
-        await api.authenModule.register(newData);
-  
+         await api.authenModule.register(newData); 
+         
         Modal.success({
           title: 'Register Success',
           content: 'Vui lòng vào email để xác nhận !',
@@ -52,7 +50,7 @@ const Register = () => {
             Đăng Ký
           </div>
           <form  onSubmit={(e: React.FormEvent) => {
-                handleRegister(e)
+                handleRegister(e) 
             }}>
             <div className="email">
               <div>

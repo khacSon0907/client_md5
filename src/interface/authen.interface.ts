@@ -1,11 +1,11 @@
 enum UserRole {
-    admin="admin",
-    member="member"
+    admin = "admin",
+    member = "member"
 }
 
 enum UserStatus {
-    active="active",
-    inactive="inactive"
+    active = "active",
+    inactive = "inactive"
 }
 
 
@@ -27,4 +27,9 @@ export interface UserCreate {
     password: string;
     email: string;
     avatar: string;
+}
+export interface UserLogin {
+    loginUser: string;
+    password:string;
+
 }

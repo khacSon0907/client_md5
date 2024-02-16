@@ -1,7 +1,35 @@
 import { useNavigate } from 'react-router-dom'
 import './Login.scss'
+import { UserLogin } from '@/interface/authen.interface';
+import { api } from '@/service/index';
+import { Modal, message } from 'antd';
 const Login = () => {
   const navigate = useNavigate();
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      let newData: UserLogin = {
+        loginUser: (e.target as any).loginUser.value,
+        password: (e.target as any).password.value
+      }
+      console.log("New data Login", newData);
+      let result = await api.authenModule.login(newData)
+      console.log("kết quả " , result);
+
+      Modal.success({
+        title: 'Success',
+        content: 'Đăng nhập thành công',
+        onOk: () => {
+          navigate('/')
+      }
+      });
+
+    }
+    catch (err: any) {
+      message.error(err?.response?.data?.message || "Loi server")
+    }
+  }
 
   return (
     <div>
@@ -10,30 +38,32 @@ const Login = () => {
           <div className="titleLogin">
             Đăng Nhập
           </div>
-          <form action="">
+          <form onSubmit={(e: React.FormEvent) => {
+            handleLogin(e);
+          }}>
 
             <div className="email">
               <div>
                 <i className="fa-solid fa-envelope iconEmail"></i>
-                <input type="text" placeholder='Tên Đăng Nhập' />  
+                <input type="text" placeholder='Email hoặc UserName' name='loginUser' />
               </div>
             </div>
 
             <div className="passwork">
               <div>
-                 <i className="fa-solid fa-lock iconPass"></i>
-                <input type="text" placeholder='Mật Khẩu' />
+                <i className="fa-solid fa-lock iconPass"></i>
+                <input type="password" placeholder='Mật Khẩu' name='password' />
               </div>
             </div>
 
             <div className="actionBtn-Login">
-                <button>Xác Nhận</button>
+              <button type='submit' >Xác Nhận</button>
             </div>
 
             <div className="actionBtn-Google">
-                <button>
-                      Google
-                </button>
+              <button>
+                Google
+              </button>
             </div>
           </form>
 
@@ -44,7 +74,7 @@ const Login = () => {
           </div>
 
           <div className="actionRegister">
-            <button onClick={()=>{
+            <button onClick={() => {
               navigate('/register')
             }}>Đăng ký</button>
           </div>
