@@ -14,9 +14,7 @@ const Login = () => {
         password: (e.target as any).password.value
       }
       console.log("New data Login", newData);
-      let result = await api.authenModule.login(newData)
-      console.log("kết quả " , result);
-
+       await api.authenModule.login(newData)
       Modal.success({
         title: 'Success',
         content: 'Đăng nhập thành công',
