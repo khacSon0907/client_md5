@@ -9,6 +9,6 @@ export const authenModule = {
         return await axios.post(`${import.meta.env.VITE_API_SERVER}/login`, userlogin);
     },
     getData: async function () {
-        return await axios.get(`${import.meta.env.VITE_API_SERVER}`)
+        return await axios.get(`https://api.nks.io.vn/authen`)
     }
 }

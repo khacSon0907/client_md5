@@ -8,9 +8,9 @@ import { authenAction } from "./stores/slices/authen.slice"
 const App = () => {
 
   const dispatch:AppDispatch = useDispatch()
-  useEffect(()=>{
+  useEffect(  () => {
     try{
-      api.authenModule.getData()
+       api.authenModule.getData()
       .then(res => {
         console.log(" thanh cong ", res);
         dispatch(authenAction.setAuthen(res.data.data))
