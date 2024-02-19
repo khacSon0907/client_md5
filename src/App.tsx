@@ -12,7 +12,6 @@ const App = () => {
     try{
        api.authenModule.getData()
       .then(res => {
-        console.log(" thanh cong ", res);
         dispatch(authenAction.setAuthen(res.data.data))
       })
     }
