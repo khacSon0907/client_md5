@@ -14,13 +14,14 @@ const Login = () => {
         password: (e.target as any).password.value
       }
       console.log("New data Login", newData);
-       await api.authenModule.login(newData)
+      let result = await api.authenModule.login(newData);
+      localStorage.setItem("token", result.data.token)
       Modal.success({
         title: 'Success',
         content: 'Đăng nhập thành công',
         onOk: () => {
-          navigate('/')
-      }
+          window.location.href = "/"
+        }
       });
 
     }

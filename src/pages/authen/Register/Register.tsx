@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { UserCreate } from "@/interface/authen.interface";
 import { api } from "@/service/index";
 import { Modal, message } from "antd";
+import pictures from "@/pictures/index";
 const Register = () => {
     const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const Register = () => {
           username: (e.target as any).username.value,
           email: (e.target as any).email.value,
           password: (e.target as any).password.value,
-          avatar: "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"
+          avatar: pictures.notAvatar
         }
       
         let checkUserName = isUsernameValid(newData.username);

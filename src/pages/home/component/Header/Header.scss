@@ -1,42 +1,48 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    // border: 1px solid red ;
 }
 
-header{
+header {
     width: 100%;
     height: $headerHeight;
     background-color: $backGround;
     line-height: 56px;
-    nav{
+
+    nav {
         margin: 0px 100px;
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         align-items: center;
-        
-        .navLeft{
+
+        .navLeft {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap:30px;
-            .navLogo{
+            gap: 30px;
+
+            .navLogo {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 10px;
-                .imageCigarette{
+
+                .imageCigarette {
                     width: 35px;
                     height: 35px;
                     overflow: hidden;
-                    img{
+
+                    img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         object-position: center;
                     }
                 }
-                .titlePage{
+
+                .titlePage {
                     text-decoration: none;
                     color: $colorTitle;
                     font-family: $fontFamily;
@@ -45,45 +51,60 @@ header{
                     font-family: $fontFamily;
                 }
             }
-            .navMenu{
+
+            .navMenu {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                ul{
-                    li{
+
+                ul {
+                    li {
                         padding: 0px 15px;
                         list-style: none;
                         display: inline-block;
-                        .titleMenu{
+
+                        .titleMenu {
                             text-decoration: none;
-                            color:$colorTitleMenu ;
+                            color: $colorTitleMenu ;
                             font-size: $fontSizeMenu;
                             font-family: $fontFamily;
-                            font-weight: 600; 
+                            font-weight: 600;
                         }
-                        .titleMenu:hover{
-                            color:$colorTitle;
+
+                        .titleMenu:hover {
+                            color: $colorTitle;
                         }
-                        .iconDown{
+
+                        .iconDown {
                             color: $colorTitleMenu;
                             padding-left: 7px;
                         }
-                        .iconDown:hover{
-                            color:$colorTitle;
+
+                        .iconDown:hover {
+                            color: $colorTitle;
                         }
                     }
                 }
             }
-            
+
         }
-       
-        .navAction{
+
+        .navAction {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap:25px;
-            .navAction__login{
-                .inputLogin{
+            gap: 25px;
+
+            .navAction__login {
+                .userlogin {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+                .inputLogin {
                     text-decoration: none;
                     color: $colorTitleMenu;
                     font-size: $fontSizeMenu;
@@ -91,22 +112,34 @@ header{
                     font-weight: 600;
 
                 }
-                .inputLogin:hover{
-                    color:$colorTitle;
-                }
-            }
-            .navAction__cart{
 
-                .iconCart{
+                .inputLogin:hover {
+                    color: $colorTitle;
+                }
+
+                img {
+                    height: 2.3em;
+                    width: auto;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    margin-left: 10px;
+                }
+
+            }
+
+            .navAction__cart {
+
+                .iconCart {
                     color: $colorTitleMenu;
                     font-weight: 700;
                 }
-                .iconCart:hover{
-                    color:$colorTitle;
+
+                .iconCart:hover {
+                    color: $colorTitle;
                 }
 
             }
         }
-        
+
     }
 }

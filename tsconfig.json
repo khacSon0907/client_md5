@@ -23,7 +23,8 @@
       "@routes/*":["src/routes/*"],
       "@pictures/*":["src/pictures"],
       "@service/*":["src/service"],
-      "@interface/*":["src/interface"]
+      "@interface/*":["src/interface"],
+      "@stores/*":["src/stores"]
     },
 
 

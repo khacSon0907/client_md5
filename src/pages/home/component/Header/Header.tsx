@@ -1,10 +1,21 @@
 import './Header.scss'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import pictures from '@/pictures/index'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/stores'
+import LogOut from './LogOut'
+
 const Header = () => {
+  const userStore = useSelector((state: RootState) => state.authenter)
+  console.log("userSotre", userStore);
+  const [showLogOut, setShowLogOut] = useState<boolean>(false)
+  const handleShow = () => {
+    setShowLogOut(!showLogOut);
+  }
   return (
     <div>
-       <header>
+      <header>
         <nav>
           <div className="navLeft">
             <div className="navLogo">
@@ -38,9 +49,27 @@ const Header = () => {
 
           <div className="navAction">
             <div className="navAction__login">
-              <Link to='/login' className='inputLogin'>
-                Đăng Nhập
-              </Link>
+              {
+                userStore.data ?
+                  <div className='userlogin'>
+                    <span className='inputLogin ' onClick={() => { handleShow() }}>
+                      {
+                        userStore.data.username
+                      }
+                    </span>
+                    <img src={pictures.notAvatar} alt="" className='' onClick={() => { handleShow() }} />
+                    {
+                      showLogOut && <LogOut />
+                    }
+                  </div>
+
+                  :
+
+                  <Link to='/login' className='inputLogin'>
+                    Đăng Nhập
+                  </Link>
+              }
+
             </div>
             <div className="navAction__cart">
               <Link to='/cart'>
