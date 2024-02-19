@@ -2,7 +2,7 @@ import './Header.scss'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import pictures from '@/pictures/index'
-import { useSelector } from 'react-redux'
+import { useSelector, useStore } from 'react-redux'
 import { RootState } from '@/stores'
 import LogOut from './LogOut'
 
@@ -57,7 +57,7 @@ const Header = () => {
                         userStore.data.username
                       }
                     </span>
-                    <img src={pictures.notAvatar} alt="" className='' onClick={() => { handleShow() }} />
+                    <img src={userStore.data.avatar}  alt="" className='' onClick={() => { handleShow() }} />
                     {
                       showLogOut && <LogOut />
                     }
