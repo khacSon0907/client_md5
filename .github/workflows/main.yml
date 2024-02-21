@@ -26,6 +26,7 @@ jobs:
           cd /var/www/project5/client_md5
           echo "GitPull dữ liệu mới"
           git pull
+          echo "Git status "
           git status
           echo "kiểm tra và kích hoạt nvm"
           . $HOME/.nvm/nvm.sh
