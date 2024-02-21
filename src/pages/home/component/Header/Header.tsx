@@ -2,7 +2,7 @@ import './Header.scss'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import pictures from '@/pictures/index'
-import { useSelector, useStore } from 'react-redux'
+import { useSelector} from 'react-redux'
 import { RootState } from '@/stores'
 import LogOut from './LogOut'
 
