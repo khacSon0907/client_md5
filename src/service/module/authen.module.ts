@@ -5,10 +5,16 @@ export const authenModule = {
     register: async function (newUser: UserCreate) {
         return await axios.post(`${import.meta.env.VITE_API_SERVER}/register`, newUser);
     },
+    
     login: async function (userlogin: UserLogin) {
         return await axios.post(`${import.meta.env.VITE_API_SERVER}/login`, userlogin);
     },
     getData: async function () {
         return await axios.get(`${import.meta.env.VITE_API_SERVER}/data`);
+    },
+    loginGoogle: async function ( data : {
+        token:string
+    }) {
+        return await axios.post(`${import.meta.env.VITE_API_SERVER}/google-login`, data);
     }
 }

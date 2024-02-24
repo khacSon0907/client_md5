@@ -3,17 +3,30 @@ import './Login.scss'
 import { UserLogin } from '@/interface/authen.interface';
 import { api } from '@/service/index';
 import { Modal, message } from 'antd';
+import until from '@/until/index';
+import { Spin } from 'antd';
+import { LoadingOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { User } from 'firebase/auth'
+
+interface UserGoogleLogin extends User {
+
+  accessToken: string;
+}
+
+
 const Login = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
       let newData: UserLogin = {
         loginUser: (e.target as any).loginUser.value,
         password: (e.target as any).password.value
       }
-      console.log("New data Login", newData);
       let result = await api.authenModule.login(newData);
       localStorage.setItem("token", result.data.token)
       Modal.success({
@@ -30,6 +43,33 @@ const Login = () => {
     }
   }
 
+  const handleLoginGoogle = async () => {
+    try {
+      if(loading) 
+      return
+      setLoading(true)
+      let googleResulst = await until.firebase.hanldeLoginGoole()
+      console.log("google ", googleResulst);
+      
+      let result = await  api.authenModule.loginGoogle({
+        token: (googleResulst.user as UserGoogleLogin).accessToken
+      })         
+      console.log("token ", result);
+      localStorage.setItem("token", result.data.token)
+      Modal.success({
+          title: "Thông báo",
+          content: "Dang nhap thanh cong, comeback homepage",
+          onOk: () => {
+              window.location.href = "/"
+          }
+      })       
+      setLoading(false)
+    }
+    catch (err) {
+      console.log("Loi nek ", err);
+
+    }
+  }
   return (
     <div>
       <div className="BigLogin">
@@ -56,15 +96,25 @@ const Login = () => {
             </div>
 
             <div className="actionBtn-Login">
-              <button type='submit' >Xác Nhận</button>
-            </div>
+              <button type='submit' >Đăng Nhập</button>
+              {
+                loading && <div className='loading_login'>
+                  <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} />
+                </div>
+              }
 
-            <div className="actionBtn-Google">
-              <button>
-                Google
-              </button>
             </div>
           </form>
+
+          <div className="actionBtn-Google" >
+            <button onClick={() => {
+              handleLoginGoogle()
+            }}>
+              <a href="#" >
+                Google
+              </a>
+            </button>
+          </div>
 
           <div className='textLogin'>
             <span>
@@ -83,6 +133,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+
 
     </div>
   )

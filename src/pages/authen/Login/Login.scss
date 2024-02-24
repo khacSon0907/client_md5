@@ -1,17 +1,19 @@
-.BigLogin{
+.BigLogin {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 450px;
     width: 100%;
     background-color: rgb(77, 77, 77);
-    .login{
+
+    .login {
         border: 1px solid black;
         min-height: 380px;
         width: 354px;
         background-color: #faf3f3;
         padding-bottom: 20px;
-        .titleLogin{
+
+        .titleLogin {
             color: #505050;
             font-family: $fontFamily;
             font-weight: 600;
@@ -21,46 +23,66 @@
             padding: 10px;
             border-bottom: 1px solid #bebebe;
         }
-        .email{
+
+        .email {
             margin: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            input{
+
+            input {
                 width: 260px;
                 height: 35px;
                 border: 1px solid #bebebe;
                 padding: 10px;
             }
-            .iconEmail{
-                border: 1px  solid #bebebe;
+
+            .iconEmail {
+                border: 1px solid #bebebe;
                 border-right: none;
                 padding: 7px 10px 10px 10px;
             }
         }
-        .passwork{
+
+        .passwork {
             margin: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            input{
+
+            input {
                 width: 260px;
                 height: 35px;
                 border: 1px solid #bebebe;
                 padding: 10px;
             }
-            .iconPass{
-                border: 1px  solid #bebebe;
+
+            .iconPass {
+                border: 1px solid #bebebe;
                 border-right: none;
                 padding: 7px 10px 10px 10px;
             }
         }
-        .actionBtn-Login{
+
+        .actionBtn-Login {
             margin: 10px 0px;
             display: flex;
             justify-content: center;
             align-items: center;
-            button{
+            position: relative;
+
+            .loading_login {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            button {
                 border: none;
                 width: 290px;
                 height: 35px;
@@ -70,42 +92,55 @@
                 font-size: 16px;
                 cursor: pointer;
             }
-            button:hover{
+
+            button:hover {
                 background-color: #62a3f8;
             }
         }
-        .actionBtn-Google{
+
+        .actionBtn-Google {
             margin: 10px 0px;
             display: flex;
             justify-content: center;
             align-items: center;
-            button{
+
+            button {
                 border: none;
                 width: 290px;
                 height: 35px;
                 background-color: rgb(253, 35, 35);
-                color: #FFFFFF;
-                font-family: $fontFamily;
-                font-size: 16px;
                 cursor: pointer;
+
+                a {
+                    color: #FFFFFF;
+                    font-family: $fontFamily;
+                    font-size: 16px;
+                    text-decoration: none;
+                }
             }
-            button:hover{
+
+            button:hover {
                 background-color: rgb(252, 68, 68);
             }
+
         }
-        .textLogin{
+
+        .textLogin {
             text-align: center;
             margin: 20px 0px;
-            span{
+
+            span {
                 color: #505050;
                 font-size: 17px;
                 font-family: $fontFamily;
             }
         }
-        .actionRegister{
+
+        .actionRegister {
             text-align: center;
             margin: 10px 0px;
-            button{
+
+            button {
                 width: 290px;
                 height: 35px;
                 background-color: rgb(253, 35, 35);
@@ -115,14 +150,17 @@
                 font-family: $fontFamily;
                 font-size: 17px;
             }
-            button:hover{
+
+            button:hover {
                 background-color: rgb(255, 104, 104);
 
             }
         }
-        .actionForgetPass{
+
+        .actionForgetPass {
             text-align: center;
-            button{
+
+            button {
                 width: 290px;
                 height: 35px;
                 color: #505050;

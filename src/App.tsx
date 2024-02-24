@@ -12,6 +12,7 @@ const App = () => {
     try{
        api.authenModule.getData()
       .then(res => {
+        console.log("res login data ", res);
         dispatch(authenAction.setAuthen(res.data.data))
       })
     }

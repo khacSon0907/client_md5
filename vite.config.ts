@@ -15,7 +15,8 @@ export default defineConfig({
       "@pictures": `${path.resolve(__dirname, "./src/pictures/")}`,
       "@interface": `${path.resolve(__dirname, "./src/interface/")}`,
       "@service": `${path.resolve(__dirname, "./src/service/")}`,
-      "@stores" : `${path.resolve(__dirname,"./stc/stores")}`
+      "@stores" : `${path.resolve(__dirname,"./src/stores")}`,
+      "@until": `${path.resolve(__dirname,"./src/until")}`
       },
   },
 

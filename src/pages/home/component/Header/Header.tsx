@@ -52,11 +52,10 @@ const Header = () => {
               {
                 userStore.data ?
                   <div className='userlogin'>
-                    <span className='inputLogin ' onClick={() => { handleShow() }}>
-                      {
-                        userStore.data.username
-                      }
-                    </span>
+                         <span className='inputLogin ' onClick={() => { handleShow() }}>
+                            {isNaN(Number(userStore.data.username)) ? userStore.data.username : userStore.data.email.split("@")[0]}
+
+                            </span>
                     <img src={userStore.data.avatar}  alt="" className='' onClick={() => { handleShow() }} />
                     {
                       showLogOut && <LogOut />

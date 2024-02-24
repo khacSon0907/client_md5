@@ -24,7 +24,8 @@
       "@pictures/*":["src/pictures"],
       "@service/*":["src/service"],
       "@interface/*":["src/interface"],
-      "@stores/*":["src/stores"]
+      "@stores/*":["src/stores"],
+      "@until/*":["src/until"],
     },
 
 
