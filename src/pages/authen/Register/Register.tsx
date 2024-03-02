@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import { UserCreate } from "@/interface/authen.interface";
 import { api } from "@/service/index";
 import { Modal, message } from "antd";
-import pictures from "@/pictures/index";
 const Register = () => {
     const navigate = useNavigate();
 
