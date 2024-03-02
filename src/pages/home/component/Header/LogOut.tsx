@@ -1,13 +1,22 @@
 import { useState } from 'react'
 import './LogOut.scss'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Modal, } from 'antd';
-import {  AppDispatch } from '@/stores'
+import { AppDispatch } from '@/stores'
 import { authenAction } from '@/stores/slices/authen.slice'
-const LogOut: React.FC = () => {
-    // const userStore = useSelector((store: RootState) => store.authenter);
-    const dispatch: AppDispatch = useDispatch()
+import { useNavigate } from 'react-router-dom';
 
+
+interface Props {
+    showLogOut: boolean;
+    setShowLogOut:React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const LogOut: React.FC<Props> = (props) => {
+    const {setShowLogOut} = props;
+
+    const dispatch: AppDispatch = useDispatch()
+    const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -29,26 +38,29 @@ const LogOut: React.FC = () => {
     return (
         <div className='logout'>
             <div>
-                {/* {
-                    userStore.data?.role == 'admin' && (
-                        <span
-                            onClick={() => { navigate('/admin') }}
-                        >
-                            Admin
-                        </span>
-                    )
-                } */}
-                <br />
-                <span onClick={() => {
-                    showModal()
-                }}>
-                    Log Out
-                    <i className="fa-solid fa-right-from-bracket" style={{ margin: '0px 5px' }} ></i>
-                </span>
+
+                <ul className='listLogOut'>
+                    <li
+                        onClick={() => {
+                            navigate('/mypage')
+                            setShowLogOut(false)
+                        }}
+                    >
+                        <i className="fa-regular fa-user" style={{ marginRight: '5px' }}></i>
+                        Tài khoản
+                    </li>
+                    <li onClick={() => {
+                        showModal()
+                    }}>
+                        Đăng xuất
+                        <i className="fa-solid fa-right-from-bracket" style={{ margin: '0px 5px' }} ></i>
+                    </li>
+                </ul>
+
 
                 <Modal title="Log Out" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Bạn có muốn đăng xuất không ?</p>
-                   
+
                 </Modal>
             </div>
 

@@ -1,0 +1,131 @@
+.BigMyPage {
+    height: 520px;
+    max-width: $maxWidth;
+    background-color: rgb(223, 223, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $fontFamily;
+
+    .myPageSmall {
+        width: 1300px;
+        background-color: whitesmoke;
+        height: 500px;
+        padding: 40px;
+        border-radius: 10px;
+        // border: 1px solid black;
+
+        h3 {
+            font-family: $fontFamily;
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .btn_saveInfo {
+            text-align: center;
+            margin: 10px 0px;
+
+            .saveMyPage {
+                border: 1px solid red;
+                color: red;
+                font-family: $fontFamily;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .saveMyPage:hover {
+                cursor: pointer;
+                background-color: rgb(245, 131, 131);
+                color: white;
+            }
+        }
+
+
+        .myPageSelf {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // border: 1px solid black;
+
+            p {
+                font-size: 18px;
+                padding: 20px;
+            }
+
+            .imageMyPage {
+                text-align: center;
+                width: 600px;
+                border: 1px solid black;
+                padding: 10px;
+                border-radius: 10px;
+
+                .imgAvatar {
+                    padding-bottom: 10px;
+                }
+
+                .changeImg {
+                    border-radius: 5px;
+                    padding: 10px;
+
+                    i {
+                        margin: 0px 10px;
+                        font-size: 20px;
+                    }
+
+                    margin: 0px 5px;
+                    border: 1px solid gray;
+                }
+
+                .changeImg:hover {
+                    cursor: pointer;
+                    border: 1px solid black;
+                    color: rgba(3, 88, 3, 0.459)
+                }
+
+
+
+                img {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                }
+            }
+
+            .nameMypage {
+                width: 600px;
+                height: 340.5px;
+                border: 1px solid black;
+                padding: 10px;
+                border-radius: 10px;
+
+                p {
+                    text-align: center;
+                }
+
+                .formInfo {
+                    padding: 20px;
+
+                    input {
+                        padding: 5px 10px;
+                        min-width: 250px;
+                    }
+
+                    label {
+                        display: inline-block;
+                        min-width: 100px;
+                        // font-family: ;
+                        font-size: 18px;
+                        // line-height: 20px;
+                        margin: 5px 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+* {
+    // border: 1px solid red;
+}

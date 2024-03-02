@@ -20,7 +20,7 @@ const Register = () => {
           username: (e.target as any).username.value,
           email: (e.target as any).email.value,
           password: (e.target as any).password.value,
-          avatar: pictures.notAvatar
+          avatar: '/src/pictures/noavater.jpg'
         }
       
         let checkUserName = isUsernameValid(newData.username);

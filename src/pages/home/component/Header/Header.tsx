@@ -2,7 +2,7 @@ import './Header.scss'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import pictures from '@/pictures/index'
-import { useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '@/stores'
 import LogOut from './LogOut'
 
@@ -13,6 +13,9 @@ const Header = () => {
   const handleShow = () => {
     setShowLogOut(!showLogOut);
   }
+  console.log("hinh anh user ", userStore.data?.avatar);
+  console.log("hình ảnh user tren client ", pictures.notAvatar);
+
   return (
     <div>
       <header>
@@ -52,13 +55,13 @@ const Header = () => {
               {
                 userStore.data ?
                   <div className='userlogin'>
-                         <span className='inputLogin ' onClick={() => { handleShow() }}>
-                            {isNaN(Number(userStore.data.username)) ? userStore.data.username : userStore.data.email.split("@")[0]}
+                    <span className='inputLogin ' onClick={() => { handleShow() }}>
+                      {isNaN(Number(userStore.data.username)) ? userStore.data.username : userStore.data.email.split("@")[0]}
 
-                            </span>
-                    <img src={userStore.data.avatar}  alt="" className='' onClick={() => { handleShow() }} />
+                    </span>
+                    <img src={userStore.data.avatar} alt="" className='' onClick={() => { handleShow() }} />
                     {
-                      showLogOut && <LogOut />
+                      showLogOut && <LogOut showLogOut={showLogOut} setShowLogOut={setShowLogOut} />
                     }
                   </div>
 

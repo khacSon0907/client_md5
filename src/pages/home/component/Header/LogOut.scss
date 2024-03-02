@@ -1,23 +1,29 @@
 .logout {
     position: absolute;
-    width: 150px;
+    width: 160px;
     min-height: 30px;
-    // border: 1px solid black;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    top: 45px;
+    box-shadow: 0px 0px 10px rgba(179, 177, 177, 0.2);
+    top: 56px;
     right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(245, 245, 245);
 
-    span {
-        font-size: 14px;
-        font-family: $fontFamily;
-        font-weight: 600;
-        color: rgb(85, 81, 81);
-    }
+    .listLogOut {
+        li {
+            display: block;
+            width: 160px;
+            padding-left: 15px;
+            font-family: $fontFamily;
+        }
 
-    :hover {
-        cursor: pointer;
+        li:hover {
+            background-color: rgb(240, 127, 127);
+        }
     }
+}
+
+* {
+    // border: 1px solid red;
 }
