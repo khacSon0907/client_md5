@@ -2,7 +2,7 @@ import Home from "@/pages/home/Home"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Login from "@pages/authen/Login/Login"
 import Register from "@/pages/authen/Register/Register"
-import Mypage from "@/pages/my page/Mypage"
+import Mypage from "@/pages/mypage/Mypage"
 import HomePage from "@/pages/homepage/HomePage"
 const Routers = () => {
     return (
