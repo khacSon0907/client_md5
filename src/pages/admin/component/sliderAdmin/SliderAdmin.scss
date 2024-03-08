@@ -1,0 +1,17 @@
+.sliderAdmin {
+    min-height: 585px;
+    width: 100%;
+    border-right: 2px solid rgb(172, 172, 172);
+    font-family: $fontFamily;
+
+    h3 {
+        border-bottom: 2px solid rgb(172, 172, 172);
+        padding: 10px 20px;
+        color: rgb(104, 104, 240);
+        // border-top: 2px solid rgb(172, 172, 172);
+
+        .icon-homeAdmin {
+            margin-right: 10px;
+        }
+    }
+}

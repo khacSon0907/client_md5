@@ -28,7 +28,7 @@ const Login = () => {
         password: (e.target as any).password.value
       }
       let result = await api.authenModule.login(newData);
-      localStorage.setItem("token", result.data.token)
+      localStorage.setItem("token", result?.data.token)
       Modal.success({
         title: 'Success',
         content: 'Đăng nhập thành công',
@@ -39,6 +39,7 @@ const Login = () => {
 
     }
     catch (err: any) {
+      console.log("err", err);      
       message.error(err?.response?.data?.message || "Loi server")
     }
   }

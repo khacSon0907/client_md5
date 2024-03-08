@@ -10,14 +10,10 @@ const firebaseConfig = {
   appId: "1:514532889067:web:32a86678cd8a9ad961c9ae",
   measurementId: "G-7FKGMCLWWB"
 };
-
-    const app = initializeApp(firebaseConfig)
-
-
-
+  const app = initializeApp(firebaseConfig)
   const hanldeLoginGoole = async ()=>{
-    const provider = new GoogleAuthProvider();
-    const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth(app);
     return await signInWithPopup(auth,provider)
   }
 

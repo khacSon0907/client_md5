@@ -1,0 +1,33 @@
+.adminPage {
+    max-width: $maxWidth;
+
+    .bodyAdmin {
+        display: flex;
+        justify-content: center;
+        width: 1360px;
+
+        .slider {
+            width: 260px;
+
+        }
+
+        .content {
+            width: 1100px;
+
+            h3 {
+                width: 100%;
+                border-bottom: 2px solid rgb(172, 172, 172);
+                padding: 10px 10px;
+                color: rgb(104, 104, 240);
+                font-family: $fontFamily;
+                .icon-homeAdmin {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+* {
+    // border: 1px solid red;
+}

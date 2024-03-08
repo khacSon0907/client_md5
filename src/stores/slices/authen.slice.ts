@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { api } from "@/service/index";
 
 export interface User {
     id: number;
@@ -16,11 +16,13 @@ export interface User {
 
 
 interface InitialState {
- data: null|User  
+    data: User | null;
+    loading: boolean
 }
 
 const initialState: InitialState = {
-    data: null
+    data: null,
+    loading: false,
 }
 
 const authenSlice = createSlice({
@@ -28,12 +30,35 @@ const authenSlice = createSlice({
     initialState,
     reducers: {
         setAuthen: (state, action) => {
-            // console.log("state dau : ", state);
             state.data = action.payload;
-            // console.log("state sau : ", state);
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchAuthen.pending, (state) => {
+                state.loading = true;
+            })
+            .addCase(fetchAuthen.fulfilled, (state, action) => {
+                state.loading = false;                
+                state.data = action.payload;
+            })
+            .addCase(fetchAuthen.rejected, (state) => {
+                state.loading = false;
+            });
     }
 })
 
+const fetchAuthen = createAsyncThunk(
+    "authen/fetchAuthen",
+    async () => {
+        const res = await api.authenModule.getData({
+            token: localStorage.getItem("token") || "null"
+        });
+        return res.data.data;
+    })
+
 export const authenReducer = authenSlice.reducer;
-export const authenAction = authenSlice.actions;
+export const authenAction = {
+    ...authenSlice.actions,
+    fetchAuthen    
+}

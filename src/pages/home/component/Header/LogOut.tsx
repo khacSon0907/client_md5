@@ -5,16 +5,21 @@ import { Modal, } from 'antd';
 import { AppDispatch } from '@/stores'
 import { authenAction } from '@/stores/slices/authen.slice'
 import { useNavigate } from 'react-router-dom';
+import { RootState } from '@/stores'
+import { useSelector } from 'react-redux'
 
 
 interface Props {
     showLogOut: boolean;
-    setShowLogOut:React.Dispatch<React.SetStateAction<boolean>>;
+    setShowLogOut: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const LogOut: React.FC<Props> = (props) => {
-    const {setShowLogOut} = props;
+    const { setShowLogOut } = props;
 
+    const userStore = useSelector((state: RootState) => state.authenter);
+    console.log("userStore ", userStore.data);
+    
     const dispatch: AppDispatch = useDispatch()
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,6 +45,17 @@ const LogOut: React.FC<Props> = (props) => {
             <div>
 
                 <ul className='listLogOut'>
+
+                    {
+                        userStore.data?.role == 'admin' && (
+                            <li
+                                onClick={() => { navigate('/admin') }}
+                            >
+                                Admin
+                            </li>
+                        )
+                    }
+
                     <li
                         onClick={() => {
                             navigate('/mypage')

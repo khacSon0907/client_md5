@@ -13,8 +13,6 @@ const Header = () => {
   const handleShow = () => {
     setShowLogOut(!showLogOut);
   }
-  console.log("hinh anh user ", userStore.data?.avatar);
-  console.log("hình ảnh user tren client ", pictures.notAvatar);
 
   return (
     <div>
