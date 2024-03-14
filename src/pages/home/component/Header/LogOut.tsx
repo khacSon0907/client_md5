@@ -19,7 +19,7 @@ const LogOut: React.FC<Props> = (props) => {
 
     const userStore = useSelector((state: RootState) => state.authenter);
     console.log("userStore ", userStore.data);
-    
+
     const dispatch: AppDispatch = useDispatch()
     const navigate = useNavigate();
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,6 +56,14 @@ const LogOut: React.FC<Props> = (props) => {
                         )
                     }
 
+                    <li
+                        onClick={() => {
+                            navigate('/receipt')
+                            setShowLogOut(false)
+                        }}
+                    >
+                        Hóa Đơn
+                    </li>
                     <li
                         onClick={() => {
                             navigate('/mypage')

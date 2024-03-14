@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import {  AppDispatch } from '@/stores'
 import { categoryAction } from '@/stores/slices/category.slice'
-
+import { productAction } from '@/stores/slices/product.slice'
 import { api } from '@/service'
 
 const Admin: React.FC = () => {
@@ -17,19 +17,21 @@ const Admin: React.FC = () => {
   useEffect(() => {
     try {
       api.categoryModule.getAll()
-
         .then((res) => {
           dispatch(categoryAction.setAuthen(res.data.data))
         })
+
+      api.productModule.gellAll()
+        .then((res) => {
+          dispatch(productAction.createProduct(res.data.data))
+        })
+          
+        
     }
     catch (err) {
       console.log("err", err);
-
     }
   }, [])
-
-
-
 
   return (
     <div className='adminPage'>

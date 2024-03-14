@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
-
 const SliderAdmin: React.FC = () => {
 
   const navigate = useNavigate();

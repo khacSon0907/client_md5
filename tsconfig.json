@@ -26,6 +26,7 @@
       "@interface/*":["src/interface"],
       "@stores/*":["src/stores"],
       "@until/*":["src/until"],
+      "@loading/*":["src/loading"],
     },
 
 

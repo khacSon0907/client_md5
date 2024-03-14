@@ -1,0 +1,48 @@
+.receipt {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+
+    .receipt_table {
+        width: 90%;
+        border: 1px solid black;
+
+        h2 {
+            text-align: center;
+            // color: red;
+        }
+
+        .receipt_detail {
+            width: 100%;
+            margin: 0px auto;
+            // border: 1px solid rgb(110, 110, 110);
+
+            table,
+            tr {
+                border-top: 1px solid gray;
+                border-bottom: 1px solid gray;
+
+                border-collapse: collapse;
+                text-align: left;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            th {
+                padding: 10px 10px;
+            }
+
+            td {
+                padding: 10px 10px;
+
+            }
+
+
+        }
+    }
+}

@@ -1,14 +1,13 @@
 .adminPage {
-    max-width: $maxWidth;
+    width: 100%;
 
     .bodyAdmin {
         display: flex;
         justify-content: center;
-        width: 1360px;
+        width: 100%;
 
         .slider {
-            width: 260px;
-
+            width: 264px;
         }
 
         .content {
@@ -20,6 +19,7 @@
                 padding: 10px 10px;
                 color: rgb(104, 104, 240);
                 font-family: $fontFamily;
+
                 .icon-homeAdmin {
                     margin-right: 10px;
                 }

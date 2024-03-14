@@ -1,0 +1,135 @@
+.Product {
+    width: 100%;
+    min-height: 530px;
+    font-family: $fontFamily;
+    display: flex;
+    justify-content: center;
+
+    .Product_createProduct {
+
+
+        position: relative;
+        padding: 10px;
+        margin-top: 20px;
+        width: 95%;
+        height: 100%;
+        border: 1px solid gray;
+
+        .back {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        h4 {
+            padding: 10px;
+            color: rgb(54, 54, 54);
+            font-size: 19px;
+            font-weight: 500;
+            border-bottom: 1px solid rgb(201, 201, 201);
+        }
+
+        label {
+            display: inline-block;
+            min-width: 150px;
+            color: rgb(52, 128, 243);
+            font-weight: 600;
+        }
+
+
+
+        .Product_createProduct-img {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            // flex-wrap: 1;
+            border-bottom: 1px solid rgb(201, 201, 201);
+
+            img {
+                margin-left: 10px;
+                margin: 10px 0px;
+                width: 120px;
+                height: 120px;
+                border-radius: 10%
+            }
+
+            button {
+                margin-left: 100px;
+            }
+        }
+
+        // .Product_createProduct-name,
+        // .Product_createProduct-total,
+        .Product_createProduct-category {
+            margin: 20px 0px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgb(201, 201, 201);
+
+            input {
+                width: 350px;
+                padding: 5px 5px 5px 10px;
+            }
+
+            select {
+                margin-right: 180px;
+            }
+
+        }
+
+        .Product_createProduct-smell,
+        .Product_createProduct-nicotine-tar {
+            margin: 20px 0px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgb(201, 201, 201);
+
+            input {
+                width: 121px;
+                padding: 5px 5px 5px 10px;
+            }
+
+            .inputNico {
+                margin-right: 50px;
+            }
+
+            .inputSmell {
+                width: 400px;
+            }
+        }
+
+        .Product_createProduct-total {
+            margin: 20px 0px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgb(201, 201, 201);
+
+            input {
+                width: 300px;
+                padding: 5px 5px 5px 10px;
+            }
+        }
+
+        .Product_createProduct-btn {
+            // margin: 22px 20px;
+            text-align: right;
+
+            button {
+                border: none;
+                background-color: rgb(219, 170, 105);
+                padding: 12px;
+                color: rgb(243, 243, 243);
+                border-radius: 10px;
+            }
+
+            button:hover {
+                cursor: pointer;
+                color: rgb(17, 17, 16);
+                background-color: rgb(170, 170, 170);
+
+            }
+        }
+
+    }
+}
+
+* {
+    // border: 1px solid black;
+}

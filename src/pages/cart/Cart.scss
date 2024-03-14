@@ -1,0 +1,102 @@
+.cart {
+    padding-top: 100px;
+    width: 100%;
+    min-height: 300px;
+
+    .cart_action {
+        position: relative;
+        margin: 20px 0px 50px 0px;
+
+        .btn {
+
+            text-align: right;
+            margin-right: 130px;
+        }
+    }
+
+    .tableCart {
+        width: 80%;
+        margin: 0px auto;
+        // border: 1px solid rgb(110, 110, 110);
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            padding: 10px 10px;
+        }
+
+        td {
+            text-align: center;
+
+            img {
+                width: 100px;
+                height: 100px;
+            }
+
+            button {
+                border: none;
+                padding: 10px;
+                margin: 0px 4px;
+                background-color: rgb(85, 88, 240);
+                border-radius: 5px;
+                font-size: 18px;
+                color: white;
+            }
+
+            button:hover {
+                cursor: pointer;
+                background-color: rgb(195, 191, 252);
+                // color: rgb(255, 124, 124);
+            }
+
+            input {
+                width: 50px;
+                padding: 5px 2px;
+                margin: 0px 5px;
+            }
+
+            .deCrease,
+            .inCrease {
+                padding: 5px;
+                // border: 1px solid rgb(204, 204, 204);
+                // border-radius: 10px;
+            }
+
+            .deCrease,
+            .inCrease:hover {
+                cursor: pointer;
+            }
+
+        }
+    }
+}
+
+.modalInfno {
+    input {
+        width: 250px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    label {
+        display: inline-block;
+        min-width: 100px;
+        color: black;
+        font-weight: 600;
+    }
+}
+
+* {
+    // border: 1px solid green
+}

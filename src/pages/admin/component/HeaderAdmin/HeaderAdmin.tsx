@@ -1,7 +1,10 @@
 import React from 'react'
 import './Header.scss'
 import { WindowsFilled } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 const HeaderAdmin :React.FC = () => {
+
+    const navigate = useNavigate();
     return (
         <div className="HeaderAdmin">
             <div className="HeaderAdmin_left">
@@ -11,7 +14,11 @@ const HeaderAdmin :React.FC = () => {
                         Administrator
                     </li>
 
-                    <li>
+                    <li
+                        onClick={()=>{
+                            navigate('/')
+                        }}
+                    >
                         Vào Trang Web
                     </li>
 

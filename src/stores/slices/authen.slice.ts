@@ -1,6 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { api } from "@/service/index";
 
+
+
+interface receiptDetails {
+    id   :number;
+    name       :string;
+    quantity   :number;
+    price      :number;
+    totalPrice :number;
+    productId  :number;
+    receiptId :number;
+}
+interface Receipt {
+    id: number;
+    address   :string          
+    phoneNumber :string;
+    status    :string;
+    totalAmount :number;
+    userId      :number;
+    details    : receiptDetails[]
+}
+  
 export interface User {
     id: number;
     username: string;
@@ -11,7 +32,8 @@ export interface User {
     status: any;
     createAt: string;
     updateAt: string;
-    avatar: string;
+    avatar: string;  
+    receipts: Receipt[]  
 }
 
 
