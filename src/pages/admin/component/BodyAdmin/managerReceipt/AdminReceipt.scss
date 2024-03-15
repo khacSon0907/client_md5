@@ -1,0 +1,26 @@
+.adminReceiptable {
+    width: 100%;
+    margin-top: 60px;
+
+    table,
+    tr,
+    td,
+    th {
+        border: 1px solid gray;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        padding: 10px 10px;
+    }
+
+    td {
+        text-align: center;
+    }
+
+}

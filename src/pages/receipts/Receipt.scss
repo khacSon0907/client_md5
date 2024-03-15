@@ -5,15 +5,46 @@
     min-height: 300px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    font-family: $fontFamily;
+
 
     .receipt_table {
         width: 90%;
         border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
 
         h2 {
             text-align: center;
             // color: red;
         }
+
+        .infoUser_give {
+            margin: 10px 0px;
+            margin-bottom: 20px;
+            position: relative;
+
+            .infoUser-name,
+            .infoUser-phone,
+            .infoUser-address {
+                margin: 5px 0px;
+            }
+
+            .infoUser-name_span {
+                display: inline-block;
+                min-width: 180px;
+                font-weight: 600;
+
+            }
+        }
+
+
+
+
+
+
+
 
         .receipt_detail {
             width: 100%;
@@ -45,4 +76,28 @@
 
         }
     }
+
+    .bill {
+        margin-left: 70%;
+        margin-top: 20px;
+        margin-right: 100px;
+        margin-bottom: 20px;
+
+        .bill-span {
+            display: inline-block;
+            min-width: 160px;
+            font-weight: 600;
+        }
+
+        .bill_money,
+        .bill_ship,
+        .bill_sale,
+        .bill_totlal {
+            margin: 5px 0px;
+        }
+    }
+}
+
+* {
+    // border: 1px solid red;
 }

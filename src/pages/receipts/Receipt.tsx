@@ -10,44 +10,54 @@ const Receipt: React.FC = () => {
     <div className='receipt'>
       {
         authenStore?.data?.receipts.map((item, index) => (
-          <div className="receipt_table">
+          <div className="receipt_table" key={index * Math.random() * Date.now() * 999}>
             <h2>
               Hóa Đơn Đặt Hàng
             </h2>
 
+
+
             <div className="inforUser">
-
-
-
               <div className="inforUser_item">
-                <div className="infoUser-name">
-                  <span>
-                    Tên Người Nhận
-                  </span>
+                <div className='infoUser_give'>
+                  <div className="infoUser-name">
+                    <span className='infoUser-name_span'>
+                      Tên Người Nhận:
+                    </span>
 
-                  <span>
-                    {usernName}
-                  </span>
+                    <span>
+                      + {usernName}
+                    </span>
+                  </div>
+                  <div className="infoUser-phone">
+                    <span className='infoUser-name_span'>
+                      Số Điện Thoại:
+                    </span>
+
+                    <span>
+                      + {item.phoneNumber}
+                    </span>
+                  </div>
+
+                  <div className="infoUser-address">
+                    <span className='infoUser-name_span'>
+                      Địa Chỉ:
+                    </span>
+                    <span>
+                      + {item.address}
+                    </span>
+                  </div>
+                  <div className="infoUser-address">
+                    <span className='infoUser-name_span'>
+                      Trạng Thái Đơn Hàng:
+                    </span>
+                    <span>
+                      + {item.status}
+                    </span>
+                  </div>
+
+
                 </div>
-                <div className="infoUser_phone">
-                  <span>
-                    Số Điện Thoại
-                  </span>
-
-                  <span>
-                    {item.phoneNumber}
-                  </span>
-                </div>
-
-                <div className="infoUser_address">
-                  <span>
-                    Địa Chỉ
-                  </span>
-                  <span>
-                    {item.address}
-                  </span>
-                </div>
-
 
                 <div className='receipt_detail'>
                   <table>
@@ -99,7 +109,7 @@ const Receipt: React.FC = () => {
 
                 <div className="bill">
                   <div className="bill_money">
-                    <span>
+                    <span className='bill-span'>
                       Tạm tính
                     </span>
                     <span>
@@ -107,7 +117,7 @@ const Receipt: React.FC = () => {
                     </span>
                   </div>
                   <div className="bill_ship">
-                    <span>
+                    <span className='bill-span'>
                       Phí Vận Chuyển
                     </span>
 
@@ -116,7 +126,7 @@ const Receipt: React.FC = () => {
                     </span>
                   </div>
                   <div className="bill_sale">
-                    <span>
+                    <span className='bill-span'>
                       Khuyến mãi
                     </span>
                     <span>
@@ -124,7 +134,7 @@ const Receipt: React.FC = () => {
                     </span>
                   </div>
                   <div className="bill_total">
-                    <span>
+                    <span className='bill-span'>
                       Tổng Cổng
                     </span>
                     <span>

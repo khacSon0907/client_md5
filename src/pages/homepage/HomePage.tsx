@@ -2,7 +2,7 @@ import React from 'react'
 import pictures from '@/pictures/index'
 import './HomePage.scss'
 import { CarOutlined, CheckCircleOutlined, ShoppingCartOutlined } from '@ant-design/icons'
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '@/stores'
 import { api } from '@/service'
@@ -16,10 +16,21 @@ const HomePage: React.FC = () => {
         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'đ';
 
     };
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const error = (text: string) => {
+        messageApi.open({
+            type: 'error',
+            content: text,
+        });
+    };
     const authenStore = useSelector((state: RootState) => state.authenter);
     const handleAddtoCart = async (itemAvtar: string, itemName: string, itemPrice: number, itemId: number) => {
         // console.log(" vô cart rồi nè ");
         try {
+            if (!authenStore?.data) {
+                return error("Vui lòng đăng nhập tài khoản ")
+            }
             if (authenStore?.data) {
                 let data: any = {
                     avatar: itemAvtar,
@@ -35,11 +46,14 @@ const HomePage: React.FC = () => {
             }
         }
         catch (err) {
+            console.log("err", err);
 
         }
     }
     return (
         <div>
+            {contextHolder}
+
             <div className="boderImg">
                 <div className="imageRound">
                     <div className="imgSlider">

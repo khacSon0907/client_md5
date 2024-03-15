@@ -34,15 +34,8 @@ const SliderAdmin: React.FC = () => {
       getItem('Loại Danh Mục', 'category', <RightOutlined />,),
       getItem('Sản Phẩm ', 'product', <RightOutlined />),
     ]),
-    getItem('Navigation Two', 'sub2', <AppstoreOutlined />, [
-      getItem('Option 5', '5'),
-      getItem('Option 6', '6'),
-    ]),
-    getItem('Navigation Three', 'sub3', <SettingOutlined />, [
-      getItem('Option 9', '9'),
-      getItem('Option 10', '10'),
-      getItem('Option 11', '11'),
-      getItem('Option 12', '12'),
+    getItem('Quản Lí Hóa Đơn', 'sub2', <AppstoreOutlined />, [
+      getItem('Hóa Đơn', 'receipt'),
     ]),
   ];
 
@@ -65,6 +58,10 @@ const SliderAdmin: React.FC = () => {
     }
     if (item?.key === 'product') {
       navigate('/admin/product')
+    }
+    if (item?.key === 'receipt') {
+      
+      navigate('/admin/receipt')
     }
   };
 

@@ -9,6 +9,7 @@ import CreateProduct from "@/pages/admin/component/BodyAdmin/createProduct/Creat
 import { lazyFn } from "./Lazy"
 import CartProduct from "@/pages/cart/CartProduct"
 import Receipt from "@/pages/receipts/Receipt"
+import AdminReceipt from "@/pages/admin/component/BodyAdmin/managerReceipt/AdminReceipt"
 const Routers = () => {
     return (
         <BrowserRouter>
@@ -24,6 +25,7 @@ const Routers = () => {
                 <Route path="/admin" element={lazyFn(() => import('@pages/admin/Admin'), !localStorage.getItem("token") ? false : true)}>
                     <Route path="category" element={<CreateCategory />}></Route>
                     <Route path="product" element={<CreateProduct />}></Route>
+                    <Route path="receipt" element={<AdminReceipt/>}></Route>
 
                 </Route>
 
